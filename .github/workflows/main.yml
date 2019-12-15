@@ -10,4 +10,4 @@ jobs:
       #- name: Testing....
       # run: ls /Applications | grep Xcode
         - name: iPhone 11 Test
-          run: xcodebuild build -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 8'
+          run: xcodebuild clean test -project GithubCIIntegration.xcodeproj -scheme GithubCIIntegration -destination "platform=iOS Simulator,name=iPhone 11 Pro"

@@ -13,8 +13,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@master
             - name: Testing....
-              run: ls /Applications | grep Xcode
-            - name: Force xcode 11
               run: sudo xcode-select -switch /Applications/Xcode_11.3.app
             - name: iPhone 11 Test
-              run: xcodebuild test -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1'
+              run: xcodebuild test -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'platform:iOS Simulator, id:733D6C75-B255-4B6D-9D47-D710FA0E4ACE, OS:13.3, name:iPhone 11 '

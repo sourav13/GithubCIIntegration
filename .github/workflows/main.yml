@@ -1,13 +1,20 @@
 name: CI
-on: [push]
-jobs:
-      build:
-        runs-on: macOS-latest
 
-        steps:
-        - name: Checkout
-          uses: actions/checkout@master
-      #- name: Testing....
-      # run: ls /Applications | grep Xcode
-        - name: iPhone 11 Test
-          run:  xcodebuild test -project GithubCIIntegration.xcodeproj -scheme GithubCIIntegration -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=12.2"
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    steps:
+            - name: Checkout
+              uses: actions/checkout@master
+            #- name: Testing....
+            # run: ls /Applications | grep Xcode
+            - name: Force xcode 11
+              run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+            - name: iPhone 11 Test
+              run: xcodebuild test -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1'

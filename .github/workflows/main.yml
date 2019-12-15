@@ -15,4 +15,4 @@ jobs:
             - name: Testing....
               run: sudo xcode-select -switch /Applications/Xcode_11.3.app
             - name: iPhone 11 Test
-              run: xcodebuild test -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'platform=iOS Simulator, id:714F712F-AAE7-4137-8446-BAA8F66B8CD9, name:iPhone 8, OS:13.3'
+              run: xcodebuild test -scheme GithubCIIntegration -project GithubCIIntegration.xcodeproj -destination 'id=714F712F-AAE7-4137-8446-BAA8F66B8CD9'
